@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 // Получаем выбранный пункт
                 State selectedState = (State)parent.getItemAtPosition(position);
+                // TODO Выполняем переход на другую активити
+
             }
         };
         currencyList.setOnItemClickListener(itemListener);

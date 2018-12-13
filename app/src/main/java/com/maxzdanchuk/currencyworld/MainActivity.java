@@ -7,21 +7,21 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Набор данных, которые свяжем со списком
-    String[] currencies = { "USD", "EUR", "RUB", "UAH", "GBP"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // Получаем элемент ListView
-        ListView countriesList = (ListView) findViewById(R.id.currencyList);
+        ListView currenciesList = (ListView) findViewById(R.id.currencyList);
+
+        // Получаем ресурс
+        String[] currencies = getResources().getStringArray(R.array.currencies);
 
         // Создаем адаптер
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, currencies);
 
         // Устанавливаем для списка адаптер
-        countriesList.setAdapter(adapter);
+        currenciesList.setAdapter(adapter);
     }
 }

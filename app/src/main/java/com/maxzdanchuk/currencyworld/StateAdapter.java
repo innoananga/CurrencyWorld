@@ -23,17 +23,30 @@ public class StateAdapter extends ArrayAdapter<State> {
         this.inflater = LayoutInflater.from(context);
     }
     public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder viewHolder;
 
-        View view = inflater.inflate(this.layout, parent, false);
-
-        ImageView flagView = (ImageView) view.findViewById(R.id.flag);
-        TextView nameView = (TextView) view.findViewById(R.id.name);
-
+        if(convertView == null){
+            convertView = inflater.inflate(this.layout, parent, false);
+            viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
+        }
+        else{
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
         State state = states.get(position);
 
-        flagView.setImageResource(state.getFlagResource());
-        nameView.setText(state.getName());
+        viewHolder.imageView.setImageResource(state.getFlagResource());
+        viewHolder.nameView.setText(state.getName());
 
-        return view;
+        return convertView;
+    }
+
+    private class ViewHolder {
+        final ImageView imageView;
+        final TextView nameView;
+        ViewHolder(View view){
+            imageView = (ImageView)view.findViewById(R.id.flag);
+            nameView = (TextView) view.findViewById(R.id.name);
+        }
     }
 }

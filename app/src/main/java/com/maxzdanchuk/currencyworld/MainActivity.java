@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Toast.makeText(getApplicationContext(), "Welcome!", Toast.LENGTH_SHORT).show();
-
+        // Приветствие в виде toast
+        String welcome = getResources().getString(R.string.welcome);
+        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_SHORT).show();
         // Начальная инициализация списка
         setInitialData();
         // Получаем элемент ListView

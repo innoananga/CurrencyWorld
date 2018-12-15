@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 State selectedState = (State) parent.getItemAtPosition(position);
                 // Создание объекта Intent для запуска YearsActivity
                 Intent intent = new Intent(getApplicationContext(), YearsActivity.class);
-                // Передача объекта с ключом "hello" и значением "Hello World"
-                intent.putExtra("Name", selectedState.getName());
+                // Передача объекта
+                intent.putExtra("Name", selectedState.getName().toLowerCase());
                 // Запуск SecondActivity
                 startActivity(intent);
             }
@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
         currencies.add(new State ("USD", R.drawable.unitedstates));
         currencies.add(new State ("EUR", R.drawable.europeanunion));
         currencies.add(new State ("RUB", R.drawable.russia));
-        currencies.add(new State ("UAH", R.drawable.ukraine));
-        currencies.add(new State ("GBP", R.drawable.uk));
     }
 
 }

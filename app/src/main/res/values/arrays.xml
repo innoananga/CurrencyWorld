@@ -4,7 +4,9 @@
         <item>USD</item>
         <item>EUR</item>
         <item>RUB</item>
-        <item>UAH</item>
-        <item>GBP</item>
+    </string-array>
+    <string-array name="years">
+        <item>2017</item>
+        <item>2018</item>
     </string-array>
 </resources>
